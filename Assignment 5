@@ -1,0 +1,130 @@
+Challenge 1 :  Square numbers and return their sum
+class Point:
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def sqSum(self):
+        return self.x*self.x+self.y*self.y+self.z*self.z
+obj=Point(1, 3, 5)
+print(obj.sqSum())
+Output : 35
+
+Challenge 2: Implement a Calculator Class
+class Calculator:
+    def __init__(self, num1, num2):
+        self.num1=num1
+        self.num2=num2
+    def add(self):
+        return self.num1+self.num2
+    def subtract(self):
+        return self.num2-self.num1
+    def multiply(self):
+        return self.num1*self.num2
+    def divide(self):
+        return self.num2/self.num1
+obj=Calculator(10, 94)
+print(obj.add())
+print(obj.subtract())
+print(obj.multiply())
+print(obj.divide())
+Output : 
+104
+84
+940
+9.4
+
+Challenge 3: Implement the Complete Student Class
+class Student:
+    def setName(self, name):
+        self.__name=name
+    def getName(self):
+        return self.__name
+    def setRollNumber(self, rollNumber):
+        self.__rollNumber=rollNumber
+    def getRollNumber(self):
+        return self.__rollNumber
+
+
+stu=Student()
+stu.setName(name=str(input("type your name....: ")))
+stu.setRollNumber(rollNumber=int(input("type your roll number....:")))
+
+print("your name:", stu.getName())
+print("your roll number:", stu.getRollNumber())
+
+Output:-
+type your name....: Tejal Patil
+type your roll number....:123456767890
+your name: Tejal Patil
+your roll number: 123456767890
+
+
+Challenge 4: Implement a Banking Account
+class Account:
+
+    def __init__(self, title=None, balance=0):
+        self.title=title
+        self.balance=balance
+
+class SavingsAccount(Account):
+    def __init__(self, title=None, balance=0, interestRate=0):
+        super().__init__(title, balance)
+        self.interestRate=interestRate
+
+obj1=SavingsAccount("TejalPatil", 6000, 7)
+print(obj1.title)
+print(obj1.balance)
+print(obj1.interestRate)
+Output:-
+TejalPatil
+6000
+7
+
+Challenge 5: Handling a Bank Account
+class Account:
+
+    def __init__(self, title=None,balance=0):
+        self.title=title
+        self.balance=balance
+
+    def withdrawal(self, amount):
+        self.balance=self.balance-amount
+
+    def deposit(self, amount):
+        self.balance=self.balance+amount
+
+    def getBalance(self):
+        return self.balance
+
+
+class SavingsAccount(Account):
+
+    def __init__(self, title=None, balance=0, interestRate=0):
+        super().__init__(title, balance)
+        self.interestRate = interestRate
+
+    def interestAmount(self):
+        return (self.balance*self.interestRate/100)
+
+
+demo1 = SavingsAccount("TejalPatil", 6000, 7)
+
+print(demo1.title, demo1.balance, demo1.interestRate, sep=" ")
+
+demo1.deposit(int(input("enter the deposit amount :")))
+
+demo1.withdrawal(int(input("enter the withdrawl amount :")))
+
+print("your balance",demo1.getBalance())
+
+print("interest:",demo1.interestAmount())
+
+Output:-
+TejalPatil 6000 7
+enter the deposit amount :7000
+enter the withdrawl amount :2000
+your balance 11000
+interest: 770.0
+
